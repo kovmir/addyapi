@@ -1,6 +1,6 @@
 # addyapi
 
-[addy.io] REST API client library.
+[addy.io][1] REST API client library.
 
 *Not complete yet.*
 
