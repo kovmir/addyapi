@@ -245,7 +245,7 @@ type AliasParams struct {
 	PageNumber uint
 	PageSize   uint
 	// True to get descending sort.
-	SortRev bool
+	SortDesc bool
 }
 
 type RecipientsParams struct {

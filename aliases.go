@@ -10,7 +10,7 @@ func (ac *AddyClient) GetAliases(params *AliasParams) (*AliasesResp, error) {
 		queryParams["filter["+key+"]"] = val
 	}
 	if params.Sort != "" {
-		if params.SortRev { // Prepend "-" to reverse sort order.
+		if params.SortDesc { // Prepend "-" to reverse sort order.
 			params.Sort = "-" + params.Sort
 		}
 		queryParams["sort"] = string(params.Sort)
