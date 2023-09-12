@@ -2,7 +2,9 @@
 
 [addy.io][1] REST API client library.
 
-*Not complete yet.*
+# STATUS
+
+Implemented all HTTP `GET` methods.
 
 # INSTALL
 
