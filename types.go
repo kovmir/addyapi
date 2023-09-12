@@ -198,9 +198,29 @@ type Rule struct {
 	UpdatedAt  *AddyTime    `json:"updated_at"`
 }
 
+type Username struct {
+	ID               string    `json:"id"`
+	UserID           string    `json:"user_id"`
+	Username         string    `json:"username"`
+	Description      string    `json:"description"`
+	Aliases          []Alias   `json:"aliases"`
+	DefaultRecipient string    `json:"default_recipient"`
+	Active           bool      `json:"active"`
+	CatchAll         bool      `json:"catch_all"`
+	CanLogin         bool      `json:"can_login"`
+	CreatedAt        AddyTime  `json:"created_at"`
+	UpdatedAt        *AddyTime `json:"updated_at"`
+}
+
 // Instead of simply sending the data, addy wraps some of the responses within
 // the 'data' JSON field. The following structures are defined to be able to
 // parse addy REST API responses.
+type UsernameResp struct {
+	Data Username `json:"data"`
+}
+type UsernamesResp struct {
+	Data []Username `json:"data"`
+}
 type RuleResp struct {
 	Data Rule `json:"data"`
 }
