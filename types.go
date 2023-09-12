@@ -171,9 +171,42 @@ type Alias struct {
 	DeletedAt       *AddyTime   `json:"deleted_at"`
 }
 
+type Conditions struct {
+	Type   string   `json:"type"`
+	Match  string   `json:"match"`
+	Values []string `json:"values"`
+}
+
+type Actions struct {
+	Type  string `json:"type"`
+	Value string `json:"value"`
+}
+
+type Rule struct {
+	ID         string       `json:"id"`
+	UserID     string       `json:"user_id"`
+	Name       string       `json:"name"`
+	Order      int          `json:"order"`
+	Conditions []Conditions `json:"conditions"`
+	Actions    []Actions    `json:"actions"`
+	Operator   string       `json:"operator"`
+	Forwards   bool         `json:"forwards"`
+	Replies    bool         `json:"replies"`
+	Sends      bool         `json:"sends"`
+	Active     bool         `json:"active"`
+	CreatedAt  AddyTime     `json:"created_at"`
+	UpdatedAt  *AddyTime    `json:"updated_at"`
+}
+
 // Instead of simply sending the data, addy wraps some of the responses within
 // the 'data' JSON field. The following structures are defined to be able to
 // parse addy REST API responses.
+type RuleResp struct {
+	Data Rule `json:"data"`
+}
+type RulesResp struct {
+	Data []Rule `json:"data"`
+}
 type AliasResp struct {
 	Data Alias `json:"data"`
 }
