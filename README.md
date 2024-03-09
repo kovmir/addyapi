@@ -1,6 +1,6 @@
 # addyapi
 
-[addy.io][1] RESTful API client library.
+[addy.io][1] RESTful [API][3] client library.
 
 # INSTALL
 
@@ -11,6 +11,8 @@ go get github.com/kovmir/addyapi
 ```
 
 # USAGE
+
+Go to your [account settings][2] to issue a new token, and then:
 
 ```go
 package main
@@ -57,3 +59,5 @@ func main() {
 ```
 
 [1]: https://addy.io/
+[2]: https://app.addy.io/settings/api
+[3]: https://app.addy.io/docs/#
