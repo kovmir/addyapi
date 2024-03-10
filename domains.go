@@ -57,6 +57,9 @@ func (c *Client) DomainUpdate(id string, data *DomainUpdateArgs) (*DomainWrap, e
 }
 
 // https://app.addy.io/docs/#domains-PATCHapi-v1-domains--id--default-recipient
-func (c *Client) DomainUpdDefRecipient(id string, data *DomainUpdateArgs) (*DomainWrap, error) {
-	return patch[DomainWrap](c, "api/v1/domains/"+id, data)
+func (c *Client) DomainUpdDefRecipient(id, recipient string) (*DomainWrap, error) {
+	data := struct {
+		DefaultRecipient string `json:"default_recipient,omitempty"`
+	}{DefaultRecipient: recipient}
+	return patch[DomainWrap](c, "api/v1/domains/"+id+"/default-recipient", data)
 }

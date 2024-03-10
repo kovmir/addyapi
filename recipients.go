@@ -1,8 +1,16 @@
 package addyapi
 
+type RecipientsGetArgs struct {
+	Filter map[string]string
+}
+
 // https://app.addy.io/docs/#recipients-GETapi-v1-recipients
-func (c *Client) RecipientsGet() (*RecipientsWrap, error) {
-	return get[RecipientsWrap](c, "api/v1/recipients")
+func (c *Client) RecipientsGet(params *RecipientsGetArgs) (*RecipientsWrap, error) {
+	queryParams := make([]string, 10)
+	for k, v := range params.Filter {
+		queryParams = append(queryParams, "filter["+k+"]="+v)
+	}
+	return getWithParams[RecipientsWrap](c, "api/v1/recipients", queryParams)
 }
 
 // https://app.addy.io/docs/#recipients-GETapi-v1-recipients--id-
@@ -71,7 +79,7 @@ func (c *Client) RecipientDisabInlEnc(id string) error {
 
 // https://app.addy.io/docs/#recipients-DELETEapi-v1-protected-headers-recipients--id-
 func (c *Client) RecipientDisabProtHeads(id string) error {
-	_, err := delete[any](c, "api/v1/inline-encrypted-recipients/"+id)
+	_, err := delete[any](c, "api/v1/protected-headers-recipients/"+id)
 	return err
 }
 

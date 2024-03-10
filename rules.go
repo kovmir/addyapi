@@ -19,7 +19,7 @@ type Action struct {
 	Value string `json:"value"`
 }
 
-type RuleUpdateParams struct {
+type RuleUpdateArgs struct {
 	Name       string       `json:"name"`
 	Conditions []Condition  `json:"conditions"`
 	Actions    []Action     `json:"actions"`
@@ -75,6 +75,6 @@ func (c *Client) RuleDisable(id string) error {
 }
 
 // https://app.addy.io/docs/#rules-PATCHapi-v1-rules--id-
-func (c *Client) RuleUpdate(id string, data *RuleUpdateParams) (*RuleWrap, error) {
+func (c *Client) RuleUpdate(id string, data *RuleUpdateArgs) (*RuleWrap, error) {
 	return patch[RuleWrap](c, "api/v1/rules/"+id, data)
 }

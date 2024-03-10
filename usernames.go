@@ -6,12 +6,12 @@ type UserUpdateArgs struct {
 }
 
 // https://app.addy.io/docs/#usernames-GETapi-v1-usernames
-func (c *Client) UserGet() (*UsersWrap, error) {
+func (c *Client) UsersGet() (*UsersWrap, error) {
 	return get[UsersWrap](c, "api/v1/usernames")
 }
 
 // https://app.addy.io/docs/#usernames-GETapi-v1-usernames--id-
-func (c *Client) UsersGet(id string) (*UserWrap, error) {
+func (c *Client) UserGet(id string) (*UserWrap, error) {
 	return get[UserWrap](c, "api/v1/usernames/"+id)
 }
 
