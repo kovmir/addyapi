@@ -2,6 +2,8 @@
 
 [addy.io][1] RESTful [API][3] client library.
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/kovmir/addyapi.svg)](https://pkg.go.dev/github.com/kovmir/addyapi)
+
 # INSTALL
 
 Enter your project folder, and issue `go get`:
