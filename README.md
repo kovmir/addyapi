@@ -1,6 +1,6 @@
 # addyapi
 
-[addy.io][1] RESTful [API][3] client library.
+[Addy][1] [RESTful API][2] client library.
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/kovmir/addyapi.svg)](https://pkg.go.dev/github.com/kovmir/addyapi)
 
@@ -59,6 +59,12 @@ func main() {
 	fmt.Printf("alias %s created successfully\n", alias.Data.ID)
 }
 ```
+
+# DOCUMENTATION
+
+The entire codebase resides within [`client.go`](client.go), the rest of the
+files define methods and JSONs from [Addy API reference][2]. Each method is
+more or less self-descriptive and has a URL pointing to the upstream reference.
 
 [1]: https://addy.io/
 [2]: https://app.addy.io/settings/api
