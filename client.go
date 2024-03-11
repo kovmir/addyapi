@@ -19,6 +19,7 @@ type Client struct {
 	Ctx     context.Context
 }
 
+// Initialize a new API client.
 func NewCustomClient(ctx context.Context, url, token string) *Client {
 	return &Client{
 		BaseURL: url,
@@ -27,6 +28,7 @@ func NewCustomClient(ctx context.Context, url, token string) *Client {
 	}
 }
 
+// Initialize a new default API client, only provide the token.
 func NewClient(token string) *Client {
 	return NewCustomClient(context.Background(), addyBaseURL, token)
 }
